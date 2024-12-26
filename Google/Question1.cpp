@@ -22,11 +22,13 @@ For example, "abc" has the following subsequences:
 There are 2^n - 1 non-empty subsequences
 */
 
+// Helper Article: https://codeforces.com/blog/entry/92789?mobile=false
+
 const int MOD = 1e9+7;
 inline void solve(){
-	string s; cin>>s; //  binary string
-	int n = s.size();
-	// A set to keep track of distinct subsequences values in decimal
+    string s; cin>>s; //  binary string
+    int n = s.size();
+    // A set to keep track of distinct subsequences values in decimal
     unordered_set<int> unique_values;
 
     // Iterate over each character in the string
