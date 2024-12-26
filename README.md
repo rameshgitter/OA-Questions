@@ -9,7 +9,7 @@ This repository contains questions from various company Online Assessments that 
 | JP Morgan & Chase | 8.5 | Very 1st company to visit campus |
 | Google | No criteria | Very hard to crack OA |
 | Trilogy Innovation | No criteria | They hires only IITans |
-| BNY Mellon | 7.5 | I wasn't confident of my abilities |
+| BNY Mellon | 7.5 | I lacked confidence in my abilities |
 | Texas Instrument | 6.0 | Did not consider Software Profile |
 | Accenture | No criteria | ⚠️ Not appearing after registration leads to 7 years blacklist |
 | Siemens EDA | 8.0 | My CGPA was less than that too... 😔 |
