@@ -22,7 +22,8 @@ For example, "abc" has the following subsequences:
 There are 2^n - 1 non-empty subsequences
 */
 
-// Helper Article: https://codeforces.com/blog/entry/92789?mobile=false
+// Helper Article: https://codeforces.com/blog/entry/92789?mobile=false 
+// PYQ: https://codeforces.com/blog/entry/92831
 
 const int MOD = 1e9+7;
 inline void solve(){
