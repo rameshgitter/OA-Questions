@@ -16,6 +16,12 @@ This repository contains questions from various company Online Assessments that 
 | Atlassian | 7.0 | Women in Tech |
 | PWC | 6.5 CGPA and Above 60% in Boards | I was not intersted in any of their offered roles |
 | Saint-Gobain | 9 CGPA and Above 80% in Boards | Stipend of 35k for 2 months |
+| Wells Fargo | 7.5 | Too many silly mistake i did |
+| media.net | 6 | |
+| TCS | 7.5 | Stipend of 20k per month |
+
+
+
 
 ## Repository Structure
 
@@ -28,6 +34,7 @@ This repository contains questions from various company Online Assessments that 
 ├── 📁 TexasInstruments/
 ├── 📁 Accenture/
 └── 📁 SiemensEDA/
+└── 📁 Wells Fargo/
 ```
 
 ChatGPT can't get u to interview, so better prepare and practice DSA. 
