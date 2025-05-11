@@ -35,6 +35,8 @@ This repository contains questions from various company Online Assessments that 
 ├── 📁 Accenture/
 └── 📁 SiemensEDA/
 └── 📁 Wells Fargo/
+└── 📁 Media.net/
+
 ```
 
 ChatGPT can't get u to interview, so better prepare and practice DSA. 
