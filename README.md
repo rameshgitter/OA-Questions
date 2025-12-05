@@ -34,13 +34,19 @@ This repository contains questions from various company Online Assessments that 
 | Accordion Partners (formerly Merilytics) | 65% in 10th and 12th and 6.5 CGPA in UG | Analyst-1 / Data Engineer-1 (With 6 months Internship) | ₹ 850000 per Annum |
 | LTIMindtree | 60% in 10th and 12th and UG | Graduate Engineer Trainee | ₹ 405233 per Annum |
 | Aira Matrix | 65% in 10th and 12th and UG | Trainee Engineer | ₹ 1900000 per Annum |
-| Nvidia | 60% in 10th and 12th and UG | Internship with possibility of PPO | Compensation: INR 80,000/ month (Stipend during internship) CTC: INR 33. 46 LPA on confirmation  |
+| Nvidia | 7.8 CGPA in UG | Internship with possibility of PPO | Compensation: INR 80,000/ month (Stipend during internship) CTC: INR 33. 46 LPA on confirmation  |
 | Larsen & Toubro Ltd. | 65% in 10th and 12th and UG | Graduate Engineer Trainee | Pay package includes 6.0 LPA for office based posting and 6.55 LPA for site based posting |
 | Accenture | No Criteria | Advanced Application Engineering Analyst | ₹ 1189000 per Annum |
 | Willis Towers Watson India Pvt Ltd| 80% in 10th and 12th and 6.5 CGPA in UG | Junior Software Engineer / Analyst- Quality Assurance & Testing Engineer | ₹ 1200000 per Annum |
 | Tata Consultancy Services | 60% in 10th and 12th and UG | NQT (Ninja/ Digital/ Prime) | <img width="406" height="309" alt="image" src="https://github.com/user-attachments/assets/61ad02da-e0ef-4a4d-9dc9-eb1fab972200" /> |
 | Invictus Defence Systems | 6 CGPA in UG | Interns followed by possible opportunity for Hardware Engineer | ₹ 420000 - ₹ 480000 per Annum |
 | Sigmoid Analytics | 7 CGPA in UG | Interns followed by FTE | Compensation as mentioned is 3.00 LPA  during internship (@ INR 25,000/ month) The CTC after onboarding as FTE - 8 LPA |
+| Ion Group | 75% in 10th, 12th and UG | Software Developer/ Technical Analyst/ Data Science Analyst | CTC - INR 17.3 LPA  (15 LPA Fixed) |
+| Media.net | 60% in 10th, 12th and 6 CGPA UG | 6-months internship + FTE (Site Reliability Engineer) | ₹ 1450000 per Annum |
+| IndiaMART InterMESH Ltd | 85% in 10th, 12th | Associate Engineer | ₹ 1200000 per Annum |
+| TCS Research & Innovation | 60% in 10th, 12th and 7 CGPA UG | Research & Innovation Hiring (UG) | ₹ 900000 per Annum |
+| Tiger Analytics | 6.5 CGPA in UG | Trainee - Analyst | ₹ 900000 per Annum |
+| Tata Power | 60% in 10th, 12th and UG | Graduate Engineer Trainee | ₹ 697000 per Annum |
 
 
 
