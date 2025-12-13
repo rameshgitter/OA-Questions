@@ -1,6 +1,6 @@
 # 🚀 HackerEarth Runtime Error Guide
 
-> **A clean, contest-ready reference to quickly identify, debug, and fix runtime errors on HackerEarth.**
+> **A clean, contest‑ready reference to quickly identify, debug, and fix runtime errors on HackerEarth.**
 
 ---
 
@@ -33,15 +33,83 @@ This usually happens due to **illegal memory access**, **invalid operations**, o
 
 ---
 
+## ❌ My Program Doesn’t Compile — Why?
+
+Compilation errors happen **before execution** and usually mean the judge compiler rejected your code due to **non-standard features, unsupported libraries, or language-specific constraints**.
+
+---
+
+### 🧩 C / C++ Compilation Issues
+
+✔ **Use standard-compliant compilers**
+HackerEarth uses **modern GCC/Clang**, not legacy compilers.
+
+❌ **Avoid Turbo C++ specific code**
+
+```cpp
+#include <conio.h>   // ❌ Not supported
+clrscr();
+getch();
+```
+
+✅ **Use standard headers instead**
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+```
+
+🔴 Common C/C++ Compile Errors:
+
+* Using `conio.h`, `dos.h`, or Turbo C++ functions
+* Relying on compiler-specific extensions
+* Missing headers (`#include <bits/stdc++.h>` is allowed, but not portable)
+* Mismatched function signatures
+
+---
+
+### ☕ Java Compilation Issues
+
+✔ **Multiple classes are supported**
+✔ **Inner classes must be `static`** (for now)
+
+❌ **This may fail**
+
+```java
+class Outer {
+    class Inner { }
+}
+```
+
+✅ **Correct approach**
+
+```java
+class Outer {
+    static class Inner { }
+}
+```
+
+🔴 Common Java Compile Errors:
+
+* Inner classes not declared `static`
+* Class name does not match file name
+* Missing `public static void main(String[] args)`
+* Using unsupported Java versions or APIs
+
+⚠️ **Note:** This `static inner class` restriction will be removed soon. HackerEarth will announce the update.
+
+---
+
 ## ⚠️ Common Runtime Errors
 
 | Error Code  | Name                  | Meaning                    | Frequent Causes                                                     |
 | ----------- | --------------------- | -------------------------- | ------------------------------------------------------------------- |
-| **SIGSEGV** | Segmentation Fault    | Invalid memory access      | Out-of-bounds array access, uninitialized pointers, buffer overflow |
+| **SIGSEGV** | Segmentation Fault    | Invalid memory access      | Out‑of‑bounds array access, uninitialized pointers, buffer overflow |
 | **SIGXFSZ** | Output Limit Exceeded | Too much output            | Infinite printing, excessive debug logs                             |
 | **SIGFPE**  | Floating Point Error  | Invalid arithmetic         | Division by zero, modulo by zero, overflow                          |
 | **SIGABRT** | Aborted               | Forced termination         | Assertion failure, stack overflow, memory exhaustion                |
-| **NZEC**    | Non-Zero Exit Code    | Program exited incorrectly | Missing `return 0`, uncaught exceptions, runtime crash              |
+| **NZEC**    | Non‑Zero Exit Code    | Program exited incorrectly | Missing `return 0`, uncaught exceptions, runtime crash              |
 | **MLE**     | Memory Limit Exceeded | Memory usage too high      | Large arrays, memory leaks, oversized containers                    |
 | **OTHER**   | Miscellaneous         | Undefined failures         | Combination of memory and execution issues                          |
 
@@ -125,7 +193,7 @@ int main() {
 
 ---
 
-## 🐍 Python-Specific Tips
+## 🐍 Python‑Specific Tips
 
 ```python
 # Safe input handling
@@ -151,7 +219,7 @@ if denom != 0:
 Before submitting again, verify:
 
 * [ ] All variables initialized
-* [ ] No array out-of-bounds access
+* [ ] No array out‑of‑bounds access
 * [ ] No division/modulo by zero
 * [ ] `return 0` present in `main()`
 * [ ] Array sizes within limits
@@ -221,7 +289,7 @@ int main() {}
 
 ## 📞 Support
 
-For platform-specific issues, contact **HackerEarth Support**:
+For platform‑specific issues, contact **HackerEarth Support**:
 
 📧 **[support@hackerearth.com](mailto:support@hackerearth.com)**
 
@@ -238,7 +306,7 @@ For platform-specific issues, contact **HackerEarth Support**:
 ### 🎯 Final Tip
 
 > **90% of Runtime Errors come from just 3 things:**
-> **out-of-bounds access, division by zero, and memory misuse.**
+> **out‑of‑bounds access, division by zero, and memory misuse.**
 
 Master these—and REs will fear *you*.
 
