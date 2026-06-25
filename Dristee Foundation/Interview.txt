@@ -1,0 +1,14 @@
+Interview1:
+Q1. Intrduce yourself?
+Q2. Why are You not placed Yet?
+Q3. How many inetrviews you have given till now and of which company?
+Q4. What are your futures plan?
+Q5. Since we dnt have a technical panel here, ur interview will be rescheduled later..
+
+Interview2:
+Q1. Tell more about the inetrnship experience of what i did, show the work that i have done in internship
+Q2. Show me two of your projects from github repositories and explain code of that project
+Q3. Do you know what our company does
+Q4. Why do you think Rural people should advance using AI, why cant they live on govt subsidy.
+
+VERDICT: I was REJECTED.
