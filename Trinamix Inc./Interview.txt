@@ -1,0 +1,12 @@
+Scheldue: Morning 9 AM. The HR called me yesterday night to tell we only had one slot for your interview.
+          Before the interview started they were recieving some error from my background image and audio quality.
+          I use Linux and they used Microsoft teams for Interview.
+
+Interview1:
+Two panel members were there.
+1st one asked: Introduce yourself. Tell me about your projects. If you had to redesign one of your projects how would you do it.
+2nd one asked: Mention the differnece bw multithreading and multiprocessing. Know what you know about OOPs.
+Then they asked do i have any q for them.
+
+It lasted about 20Min. 
+
