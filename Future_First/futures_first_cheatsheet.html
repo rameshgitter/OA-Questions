@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Futures First Aptitude Cheat Sheet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #161a22;
+    --card: #1c2130;
+    --accent: #f5c518;
+    --accent2: #e05c5c;
+    --accent3: #4ec9b0;
+    --accent4: #9b8af4;
+    --text: #e8eaf0;
+    --muted: #8892a4;
+    --border: #2a3040;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 24px 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-shadow: 0 0 30px rgba(245,197,24,0.3);
+  }
+
+  header p {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .card.yellow::before { background: var(--accent); }
+  .card.red::before { background: var(--accent2); }
+  .card.teal::before { background: var(--accent3); }
+  .card.purple::before { background: var(--accent4); }
+
+  .card-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+  .card.yellow .card-tag { color: var(--accent); }
+  .card.red .card-tag { color: var(--accent2); }
+  .card.teal .card-tag { color: var(--accent3); }
+  .card.purple .card-tag { color: var(--accent4); }
+
+  .card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .trick {
+    background: var(--surface);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-left: 3px solid transparent;
+  }
+  .card.yellow .trick { border-left-color: var(--accent); }
+  .card.red .trick { border-left-color: var(--accent2); }
+  .card.teal .trick { border-left-color: var(--accent3); }
+  .card.purple .trick { border-left-color: var(--accent4); }
+
+  .trick-label {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .trick-body {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  code {
+    font-family: 'DM Mono', monospace;
+    background: rgba(255,255,255,0.07);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  .example {
+    margin-top: 8px;
+    padding: 8px 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--accent3);
+  }
+
+  .penalty-box {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #1a0f0f, #1c2130);
+    border: 1px solid var(--accent2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .penalty-box h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--accent2);
+    white-space: nowrap;
+  }
+
+  .penalty-stats {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .tip-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .tip-pill {
+    background: rgba(240,80,80,0.15);
+    border: 1px solid rgba(240,80,80,0.3);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #e07070;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin: 24px 0 12px;
+    padding-left: 4px;
+    border-left: 3px solid var(--border);
+    padding-left: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Aptitude Cheat Sheet</h1>
+  <p>Futures First Online Assessment · Quick Reference for All Question Types</p>
+</header>
+
+<!-- Penalty Info -->
+<div class="grid">
+  <div class="penalty-box">
+    <h3>⚠ Marking Scheme</h3>
+    <div class="penalty-stats">
+      <div class="stat">
+        <div class="stat-num" style="color:var(--accent3)">+1</div>
+        <div class="stat-label">Correct</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--accent2)">−¼</div>
+        <div class="stat-label">Wrong (1-mark Q)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--accent4)">−½</div>
+        <div class="stat-label">Wrong (2-mark Q)</div>
+      </div>
+    </div>
+    <div class="tip-row">
+      <span class="tip-pill">Skip if < 25% sure on 1-mark</span>
+      <span class="tip-pill">Skip if < 25% sure on 2-mark</span>
+      <span class="tip-pill">Guess if 2+ options eliminated</span>
+      <span class="tip-pill">~2 min per question average</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">Section 1 · Arithmetic & Calculation</div>
+<div class="grid">
+
+  <div class="card yellow">
+    <div class="card-tag">Topic 01</div>
+    <h2>Squares & Powers</h2>
+    <div class="trick">
+      <div class="trick-label">Formula: a² + b²</div>
+      <div class="trick-body">Just compute each square and add. e.g. 24² + 42² = 576 + 1764 = <code>2340</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Quick Square Trick (near 50)</div>
+      <div class="trick-body">n² = (50±d)² = 2500 ± 100d + d²<br>e.g. 42² = 2500 − 800 + 64 = 1764</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Memorize Squares 1–30</div>
+      <div class="trick-body">Know 1²–20² cold. 21²=441, 25²=625, 30²=900</div>
+    </div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-tag">Topic 02</div>
+    <h2>Percentages</h2>
+    <div class="trick">
+      <div class="trick-label">x% of N</div>
+      <div class="trick-body">Move decimal: 175% of 84 = 1.75 × 84<br>= 84 + 0.75×84 = 84 + 63 = <code>147</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">% of % trick</div>
+      <div class="trick-body">60% of 10 = 6. So 60%(36/6 + 144/36): simplify inside first → 6+4=10 → 60%×10 = <code>6</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Convert %, fractions fast</div>
+      <div class="trick-body">75% = 3/4 · 60% = 3/5 · 33.3% = 1/3 · 12.5% = 1/8</div>
+    </div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-tag">Topic 03</div>
+    <h2>Fractions Comparison</h2>
+    <div class="trick">
+      <div class="trick-label">Cross Multiply to Compare</div>
+      <div class="trick-body">a/b vs c/d: compare a×d vs b×c<br>e.g. 2/3 vs 3/5: 10 vs 9 → <code>2/3 is larger</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Complement trick</div>
+      <div class="trick-body">11/12, 5/6, 9/10, 6/7 — look at how much is missing from 1:<br>1/12 < 1/6 < 1/10 < 1/7 → <code>11/12 is largest</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Convert to decimals if stuck</div>
+      <div class="trick-body">7/11≈0.636, 3/5=0.6, 2/3≈0.667, 4/7≈0.571 → <code>2/3 is largest</code></div>
+    </div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-tag">Topic 04</div>
+    <h2>Division & Decimals</h2>
+    <div class="trick">
+      <div class="trick-label">Long division shortcuts</div>
+      <div class="trick-body">72/32 = 9/4 = <code>2.25</code>. Always simplify fraction first.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Decimal arithmetic</div>
+      <div class="trick-body">Align decimals. 237.462+352.248: ones place 7+2=9, tenths 4+2=6, hundredths 6+4=10 → carry. = <code>589.71</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">BODMAS / Order of ops</div>
+      <div class="trick-body">Brackets → Division → Mult → Add → Subtract<br>Never left-to-right blindly with × and ÷</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-tag">Topic 05</div>
+    <h2>Speed / Rate Problems</h2>
+    <div class="trick">
+      <div class="trick-label">Speed = Distance ÷ Time</div>
+      <div class="trick-body">To find slowest: compute km/hr for each option and compare.<br>e.g. 30/14.2 ≈ 2.11, 19/9.4 ≈ 2.02, 13/6 ≈ 2.17, 40/19 ≈ 2.11 → <code>19 km in 9.4 hrs is slowest</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Fastest = highest km/hr</div>
+      <div class="trick-body">Ajay: 13/3 ≈ 4.33 > Dhananjay: 90/14 ≈ 6.43... compare all</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Train crossing formula</div>
+      <div class="trick-body">Relative speed = (l₁+l₂)/time or l₁/time if other is stationary<br>54 km/h = 15 m/s. 105m in 6s → 105/6=17.5 m/s total → not stationary, same dir</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-tag">Topic 06</div>
+    <h2>Compound Interest & Investment</h2>
+    <div class="trick">
+      <div class="trick-label">CI Formula</div>
+      <div class="trick-body">A = P(1 + r/n)^(nt)<br>For annual: A = P(1+r)^t</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">CI vs SI difference</div>
+      <div class="trick-body">CI − SI for 2 yrs = P×r²<br>If SI=40, CI=40.8 → diff=0.8 = P×r² → find r and P</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Quarterly compounding</div>
+      <div class="trick-body">10% quarterly → 10%/4=2.5% per quarter<br>After 4 quarters: (1.025)^4 ≈ 1.1038 → ~10.38% effective annual rate</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Salary comparison trick</div>
+      <div class="trick-body">Always compute total income over the full period, not just final salary</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-tag">Topic 07</div>
+    <h2>Profit, Loss & Mixtures</h2>
+    <div class="trick">
+      <div class="trick-label">Same selling price → loss formula</div>
+      <div class="trick-body">If SP is same: SP = CP₁(1−L%) = CP₂(1+G%)<br>Total CP known → solve for each CP individually</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Mixture / Alligation</div>
+      <div class="trick-body">|(C₁ − M)| : |(C₂ − M)| = ratio of cheaper:dearer<br>e.g. 40% soda, 16% soda, mix to 24%: |40−24|=16, |16−24|=8 → ratio 1:2 → replaced 1/3</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-tag">Topic 08</div>
+    <h2>Work, Pipes & Mixtures</h2>
+    <div class="trick">
+      <div class="trick-label">Men×Days = constant work</div>
+      <div class="trick-body">M₁D₁H₁ = M₂D₂H₂<br>15 men × 21 days × 8 hrs; convert women (3W=2M) → find days for 21 women × 6 hrs</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Successive dilution</div>
+      <div class="trick-body">After n removals: Milk = V×(1 − x/V)^n<br>80×(1−8/80)³ = 80×(0.9)³ = 80×0.729 = <code>58.3 L</code></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-title">Section 2 · Logic, Puzzles & Reasoning</div>
+<div class="grid">
+
+  <div class="card purple">
+    <div class="card-tag">Topic 09</div>
+    <h2>Averages & Statistics</h2>
+    <div class="trick">
+      <div class="trick-label">Average → Total</div>
+      <div class="trick-body">Total = Avg × Count. If avg of 3 innings = 16, total = 48. Use to find missing values.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Batting average problem</div>
+      <div class="trick-body">Let n = number of innings before new score<br>n×old_avg + new_score = (n+1)×new_avg → solve for n, then next score</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Normal distribution</div>
+      <div class="trick-body">Natural measurements (height, weight) are normally distributed. Registration dates/salaries are skewed.</div>
+    </div>
+  </div>
+
+  <div class="card purple">
+    <div class="card-tag">Topic 10</div>
+    <h2>Probability</h2>
+    <div class="trick">
+      <div class="trick-label">P(event) = favourable / total</div>
+      <div class="trick-body">Square 4cm, circle r=2cm: P(outside circle, inside square)<br>= (16 − 4π)/16 = 1 − π/4 ≈ 1 − 0.785 = <code>0.215</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Complement rule</div>
+      <div class="trick-body">P(composite product of 2 dice) = 1 − P(non-composite)<br>Non-composite products: 1, 2, 3, 5, 7 → count pairs → use complement</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Conditional probability</div>
+      <div class="trick-body">P(kill you | in city) = P(city) × P(target)/targets<br>Pick city with lowest product of P(presence) × (1/targets)</div>
+    </div>
+  </div>
+
+  <div class="card purple">
+    <div class="card-tag">Topic 11</div>
+    <h2>Counting / Permutations</h2>
+    <div class="trick">
+      <div class="trick-label">Alphabetical rank of word</div>
+      <div class="trick-body">DEMAND: letters A,D,D,E,M,N. Count arrangements starting with letters before D, then before E, etc. Add 1 for the word itself.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Words without DD together</div>
+      <div class="trick-body">Total arrangements − arrangements with DD together<br>Then rank DEMAND among valid arrangements only</div>
+    </div>
+  </div>
+
+  <div class="card red">
+    <div class="card-tag">Topic 12</div>
+    <h2>Logical Deduction / Groups</h2>
+    <div class="trick">
+      <div class="trick-label">Constraint satisfaction</div>
+      <div class="trick-body">List all constraints → test each answer option against ALL constraints. First violation → eliminate. The valid option satisfies every rule.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Common pattern</div>
+      <div class="trick-body">Condition chains: "A only if B" means B is required whenever A is included. Check both directions.</div>
+    </div>
+  </div>
+
+  <div class="card red">
+    <div class="card-tag">Topic 13</div>
+    <h2>Pattern / Number Series</h2>
+    <div class="trick">
+      <div class="trick-label">Odd one out</div>
+      <div class="trick-body">Check: digit sum, prime/composite, digit pattern, differences between digits. e.g. 3107, 5147, 6093, 7125, 8179, 8091, 9101 — look for divisibility pattern</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Grid number patterns</div>
+      <div class="trick-body">Check: row sums, column products, diagonal patterns, or middle = some function of corners</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Pie/wheel patterns</div>
+      <div class="trick-body">Opposite segments, sum of all, product of adjacent — test each hypothesis on known grids first</div>
+    </div>
+  </div>
+
+  <div class="card red">
+    <div class="card-tag">Topic 14</div>
+    <h2>Spatial / Visual Reasoning</h2>
+    <div class="trick">
+      <div class="trick-label">Cube folding</div>
+      <div class="trick-body">Mark faces systematically. Adjacent in net = adjacent on cube. Opposite faces in a cross-shaped net = top+bottom, left+right, front+back.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Analogy figures</div>
+      <div class="trick-body">Find the transformation rule: rotation? reflection? element swap? Apply exact same rule to the second pair.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">3D shapes</div>
+      <div class="trick-body">Octahedron: 8 faces, 12 edges → 8+12 = 20. Use Euler: V−E+F=2 to verify.</div>
+    </div>
+  </div>
+
+  <div class="card red">
+    <div class="card-tag">Topic 15</div>
+    <h2>Game Theory / Strategy</h2>
+    <div class="trick">
+      <div class="trick-label">"Say 21" type games</div>
+      <div class="trick-body">Losing positions repeat every (max+1) numbers. If max add = 3, period = 4. Losing positions: 4, 8, 12, 16, 20. Force opponent to reach these.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Stone removal games</div>
+      <div class="trick-body">Take 1–3 stones. Losing if pile ≡ 0 (mod 4). With 6 stones: take 2 → leave 4 (losing for opponent). Answer: <code>2</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Card game (sum to 15)</div>
+      <div class="trick-body">This is isomorphic to tic-tac-toe using a magic square. Second player can always force a draw → "Neither player" wins.</div>
+    </div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-tag">Topic 16</div>
+    <h2>Clock / Circular Motion</h2>
+    <div class="trick">
+      <div class="trick-label">LCM for cycles to meet</div>
+      <div class="trick-body">Lightning +3/stage, Sun −4/stage in 7-segment wheel. They return together after LCM(7/3, 7/4) stages — find when net displacement = 0 mod 7</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Faulty clock</div>
+      <div class="trick-body">Clock loses/gains per hour. Find total drift = gap shown. If gains 1, loses 2 min/hr → gap = 1hr after T hrs → T = 20 hrs from midnight = <code>20:00</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Stopped clock</div>
+      <div class="trick-body">Stopped 7 hrs ago showing 3:12. Clock lost 12 min/hr for T hours before stopping. Solve: T×12min + 7hrs×12min drift = total lag → find start time</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-tag">Topic 17</div>
+    <h2>Word / Symbol Coding</h2>
+    <div class="trick">
+      <div class="trick-label">Substitution decoding</div>
+      <div class="trick-body">Find the common element across groups. e.g. Pineapple appears in group 2 and 3. Its meaning is the overlapping output word between both groups.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Systematic approach</div>
+      <div class="trick-body">Make a table: each fruit → possible meanings. Eliminate by cross-referencing all groups. Only one consistent assignment works.</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-tag">Topic 18</div>
+    <h2>Investment / Salary Choices</h2>
+    <div class="trick">
+      <div class="trick-label">Total earnings over period</div>
+      <div class="trick-body">Always compute total, not just final value. Monthly salary × months + bonuses vs. compounding quarterly.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Semi-annual raise trick</div>
+      <div class="trick-body">Option B (raise every 6 months) > Option A (raise every 12 months) even if annual raise looks same — because B gets raise sooner, compounding advantage.</div>
+    </div>
+  </div>
+
+  <div class="card purple">
+    <div class="card-tag">Topic 19</div>
+    <h2>Partnership / Ratio</h2>
+    <div class="trick">
+      <div class="trick-label">Profit ∝ Capital × Time</div>
+      <div class="trick-body">Elon: 1/4 capital × 15 months. Musk: 3/4 capital × T months.<br>Musk profit share = 2/3, so ratio = 2:1<br>(3/4)×T / (1/4×15) = 2 → T = <code>10 months</code></div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Fleet capacity</div>
+      <div class="trick-body">Total = 50×trucks + 1×rickshaws + 10×pickups. Compute for each fleet option.</div>
+    </div>
+  </div>
+
+  <div class="card purple">
+    <div class="card-tag">Topic 20</div>
+    <h2>Balance / Moments (Lever)</h2>
+    <div class="trick">
+      <div class="trick-label">Torque = Weight × Distance</div>
+      <div class="trick-body">Fulcrum divides beam. Sum of (W×d) on left = Sum on right.<br>Read positions carefully from the diagram.</div>
+    </div>
+    <div class="trick">
+      <div class="trick-label">Brick stack</div>
+      <div class="trick-body">Each brick = sum of two below it. Work bottom-up: fill in missing values, then add upwards to top.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-title">Quick Mental Math Toolkit</div>
+<div class="grid">
+  <div class="card yellow" style="grid-column: 1 / -1;">
+    <div class="card-tag">Always Useful</div>
+    <h2>Speed Calculation Tricks</h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:10px; margin-top:4px;">
+      <div class="trick">
+        <div class="trick-label">Multiply by 1.25</div>
+        <div class="trick-body">× 1.25 = × 5/4. So 24×6×1.25 = 24×6×5/4 = 24×7.5 = <code>180</code></div>
+      </div>
+      <div class="trick">
+        <div class="trick-label">Multiply by 75%</div>
+        <div class="trick-body">× 0.75 = × 3/4. Halve then add half of that.</div>
+      </div>
+      <div class="trick">
+        <div class="trick-label">Square root estimate</div>
+        <div class="trick-body">√13 ≈ 3.6 (3.5²=12.25, 3.6²=12.96, 3.7²=13.69) → <code>3.6</code><br>√7 ≈ 2.646 → closest = <code>2.65</code></div>
+      </div>
+      <div class="trick">
+        <div class="trick-label">a²−b² = (a+b)(a−b)</div>
+        <div class="trick-body">66×76 − 65×75: not a²−b². Compute directly: 5016 − 4875 = <code>141</code></div>
+      </div>
+      <div class="trick">
+        <div class="trick-label">Sum of series</div>
+        <div class="trick-body">Arithmetic sum = n/2 × (first + last)<br>10+11+...+14 = 5/2×(10+14) = <code>60</code> → but 10+11+9+12+8+13+7+14+6 = 90</div>
+      </div>
+      <div class="trick">
+        <div class="trick-label">a×b + c×d shortcut</div>
+        <div class="trick-body">4×4+3×3+2×2+1×5 = 16+9+4+5 = <code>34</code>. Just compute each product first.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
