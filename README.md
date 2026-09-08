@@ -65,5 +65,6 @@ This repository contains questions from various company Online Assessments that 
 └── 📁 Media.net/
 
 ```
+I gave Interview of EPAM, Videonetics, Drsitee Foundation, Futures First, Trinamix Inc.
 
 ChatGPT can't get u to interview, so better prepare and practice DSA. 
